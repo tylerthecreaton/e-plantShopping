@@ -3,7 +3,7 @@
 }
 
 :root {
-  font-family: 'Trebuchet MS', 'Segoe UI', sans-serif;
+  font-family: "Trebuchet MS", "Segoe UI", sans-serif;
   color: #0f2a1f;
   background: #f5f8f3;
 }
@@ -61,7 +61,10 @@ a {
   display: grid;
   place-items: center;
   position: relative;
-  background-image: url('https://images.unsplash.com/photo-1483794344563-d27a8d18014e?auto=format&fit=crop&w=1600&q=80');
+}
+
+.background-image {
+  background-image: url("https://images.unsplash.com/photo-1483794344563-d27a8d18014e?auto=format&fit=crop&w=1600&q=80");
   background-size: cover;
   background-position: center;
 }
@@ -96,6 +99,29 @@ a {
   font-weight: 700;
   color: #1f5b3a;
   background: #e8f5e7;
+}
+
+.app-shell {
+  background: #f5f8f3;
+}
+
+.app-hero {
+  padding: 2rem;
+  text-align: center;
+  background: #e8f5e7;
+  border-bottom: 1px solid rgba(15, 42, 31, 0.1);
+}
+
+.app-hero h1 {
+  margin: 0;
+  font-size: 2rem;
+  color: #0f2a1f;
+}
+
+.app-hero p {
+  margin: 0.75rem auto 1rem;
+  max-width: 680px;
+  color: #0f2a1f;
 }
 
 .products-page,

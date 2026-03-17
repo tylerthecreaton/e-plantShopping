@@ -1,8 +1,8 @@
-import { useMemo } from 'react';
-import { useDispatch, useSelector } from 'react-redux';
-import Navbar from './components/Navbar';
-import { plants } from './data/plants';
-import { addToCart } from './CartSlice';
+import { useMemo } from "react";
+import { useDispatch, useSelector } from "react-redux";
+import Navbar from "./components/Navbar";
+import { plants } from "./data/plants";
+import { addItem } from "./CartSlice";
 
 function ProductList() {
   const dispatch = useDispatch();
@@ -25,7 +25,10 @@ function ProductList() {
         <h2>Our Houseplants</h2>
         {Object.entries(groupedPlants).map(([category, items]) => (
           <section key={category} className="plant-category">
-            <h3>{category}</h3>
+            <h3>
+              {category}
+              <span className="category-count">({items.length} plants)</span>
+            </h3>
             <div className="plant-grid">
               {items.map((plant) => {
                 const inCart = Boolean(cartMap[plant.id]);
@@ -36,10 +39,16 @@ function ProductList() {
                     <p className="price">${plant.price}</p>
                     <button
                       disabled={inCart}
-                      onClick={() => dispatch(addToCart(plant))}
+                      aria-disabled={inCart}
+                      onClick={() => dispatch(addItem(plant))}
                       type="button"
+                      title={
+                        inCart
+                          ? "Already in your cart"
+                          : "Add this plant to cart"
+                      }
                     >
-                      {inCart ? 'Added' : 'Add to Cart'}
+                      {inCart ? "Added to Cart" : "Add to Cart"}
                     </button>
                   </article>
                 );
