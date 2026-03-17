@@ -1,0 +1,238 @@
+* {
+  box-sizing: border-box;
+}
+
+:root {
+  font-family: 'Trebuchet MS', 'Segoe UI', sans-serif;
+  color: #0f2a1f;
+  background: #f5f8f3;
+}
+
+body {
+  margin: 0;
+  background: #f5f8f3;
+  color: #0f2a1f;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+.navbar {
+  position: sticky;
+  top: 0;
+  z-index: 10;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  padding: 1rem 1.5rem;
+  background: #1f5b3a;
+  color: #fff;
+}
+
+.brand {
+  font-size: 1.2rem;
+  font-weight: 700;
+}
+
+.nav-links {
+  display: flex;
+  gap: 1rem;
+}
+
+.nav-links a {
+  opacity: 0.8;
+}
+
+.nav-links a.active,
+.nav-links a:hover {
+  opacity: 1;
+  font-weight: 700;
+}
+
+.cart-icon {
+  font-weight: 700;
+}
+
+.landing-page {
+  min-height: 100vh;
+  display: grid;
+  place-items: center;
+  position: relative;
+  background-image: url('https://images.unsplash.com/photo-1483794344563-d27a8d18014e?auto=format&fit=crop&w=1600&q=80');
+  background-size: cover;
+  background-position: center;
+}
+
+.overlay {
+  position: absolute;
+  inset: 0;
+  background: rgba(11, 34, 23, 0.55);
+}
+
+.landing-content {
+  position: relative;
+  max-width: 640px;
+  margin: 1.5rem;
+  padding: 2rem;
+  border-radius: 16px;
+  text-align: center;
+  color: #fff;
+  background: rgba(0, 0, 0, 0.28);
+}
+
+.landing-content h1 {
+  margin-top: 0;
+  font-size: 2.5rem;
+}
+
+.cta-btn {
+  display: inline-block;
+  margin-top: 1rem;
+  padding: 0.75rem 1.25rem;
+  border-radius: 999px;
+  font-weight: 700;
+  color: #1f5b3a;
+  background: #e8f5e7;
+}
+
+.products-page,
+.cart-page {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 1.25rem;
+}
+
+.plant-category h3 {
+  margin-bottom: 0.5rem;
+}
+
+.plant-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(170px, 1fr));
+  gap: 1rem;
+  margin-bottom: 1.5rem;
+}
+
+.plant-card {
+  background: #fff;
+  border-radius: 12px;
+  padding: 0.8rem;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+}
+
+.plant-card img {
+  width: 100%;
+  height: 130px;
+  object-fit: cover;
+  border-radius: 8px;
+}
+
+.plant-card h4 {
+  margin: 0.6rem 0 0.25rem;
+}
+
+.price {
+  margin: 0 0 0.6rem;
+  color: #1f5b3a;
+  font-weight: 700;
+}
+
+button {
+  cursor: pointer;
+  border: none;
+  border-radius: 8px;
+  padding: 0.5rem 0.75rem;
+  font-weight: 600;
+  background: #2e7d32;
+  color: #fff;
+}
+
+button:disabled {
+  cursor: not-allowed;
+  opacity: 0.6;
+}
+
+.total-cost {
+  font-weight: 700;
+}
+
+.cart-list {
+  display: grid;
+  gap: 0.8rem;
+}
+
+.cart-row {
+  display: grid;
+  grid-template-columns: 90px 1fr auto auto;
+  align-items: center;
+  gap: 0.8rem;
+  padding: 0.8rem;
+  border-radius: 12px;
+  background: #fff;
+}
+
+.cart-row img {
+  width: 90px;
+  height: 90px;
+  object-fit: cover;
+  border-radius: 10px;
+}
+
+.cart-row-info h3 {
+  margin: 0;
+}
+
+.cart-row-info p {
+  margin: 0.2rem 0;
+}
+
+.qty-controls {
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+}
+
+.qty-controls button {
+  min-width: 32px;
+}
+
+.delete-btn {
+  background: #be2f2f;
+}
+
+.cart-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.7rem;
+  margin-top: 1rem;
+}
+
+.checkout-btn {
+  background: #3f3f3f;
+}
+
+.continue-btn {
+  display: inline-block;
+  border-radius: 8px;
+  padding: 0.55rem 0.85rem;
+  color: #fff;
+  background: #1f5b3a;
+}
+
+.empty-cart {
+  margin-top: 1rem;
+}
+
+@media (max-width: 760px) {
+  .navbar {
+    flex-wrap: wrap;
+  }
+
+  .cart-row {
+    grid-template-columns: 1fr;
+    justify-items: start;
+  }
+}
